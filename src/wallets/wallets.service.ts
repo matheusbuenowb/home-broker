@@ -24,6 +24,7 @@ export class WalletsService {
   }
 
   findOne(symbol: string) {
+    //this.walletAssetSchema.findOne({wallet: id}).populate(['wallet', 'asset'])
     return this.walletSchema.findOne({symbol});
   }
 
