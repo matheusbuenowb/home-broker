@@ -4,6 +4,7 @@ import { WalletsController } from './wallets.controller';
 import { Wallet } from './entities/wallet.entity';
 import { WalletSchema } from './entities/wallet.entity';
 import { MongooseModule } from '@nestjs/mongoose';
+import { WalletAsset, WalletAssetSchema } from './entities/wallet-asset.entity';
 
 @Module({
   imports: [
@@ -11,9 +12,12 @@ import { MongooseModule } from '@nestjs/mongoose';
       {
       name: Wallet.name,
       schema: WalletSchema,
-    },
+      },
+      {
+        name: WalletAsset.name,
+        schema: WalletAssetSchema,
+      },
     ]),
-
   ],
   controllers: [WalletsController],
   providers: [WalletsService],
